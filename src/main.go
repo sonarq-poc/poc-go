@@ -2,9 +2,23 @@ package main
 
 import "fmt"
 
+var x = 10
+
 func main() {
     fmt.Println("Go Proof of concept")
+	fmt.Println("Value of x:", x)
+		foo() 
+	fmt.Println("Value of x:", x)
+	foo2()
+	foo2()
+
+	fmt.Println("Value of x:", x)
+	fmt.Println("Value of x:", x)
 }
+
+	
+
+			
 
 func addition1() {
 	var a int = 1
@@ -23,4 +37,11 @@ func addition2() {
 	fmt.Printf("Value of c is %d\n", c)
 }
 
+func foo2() {
+		x =x-5
+}
+
+func foo() {
+	x = x + 2
+}
 
