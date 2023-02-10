@@ -17,7 +17,8 @@ func main() {
 }
 
 	
-
+func doNothing() {
+}
 			
 
 func addition1() {
