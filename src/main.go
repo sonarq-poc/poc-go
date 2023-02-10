@@ -17,8 +17,7 @@ func main() {
 }
 
 	
-function doNothing()
-{
+func doNothing() {
 }
 			
 
