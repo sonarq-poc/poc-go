@@ -31,11 +31,11 @@ jobs:
 
     # - name: Test
     #   run: go test .../src -json > test-report.out -coverprofile=coverage.out
-    - name: access src
-      run: cd ./src
 
     - name: List
-      run: ls
+      run: |
+        cd ./src
+        ls
 
     - name: Test
       run: go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
