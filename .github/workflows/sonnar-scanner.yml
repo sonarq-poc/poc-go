@@ -25,8 +25,7 @@ jobs:
 
     - name: Path
       run: |
-      pwd
-      echo pwd > ${{ vars.PATH }}
+      echo pwd >> ${{ vars.PATH }}
       echo "repository path: ${{ vars.PATH }}"
     
     - name: List
