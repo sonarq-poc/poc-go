@@ -20,8 +20,8 @@ jobs:
       with:
         go-version: 1.19
     
-    - name: Build
-      run: go build -v ./...
+    - name: Access folder
+      run: cd src
 
     - name: Test
       run:  go test -v -json > test-report.out -coverprofile=coverage.out
