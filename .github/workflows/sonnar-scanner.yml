@@ -47,7 +47,7 @@ jobs:
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       with:
-        projectBaseDir: ./src
+        projectBaseDir: ./
         args: >
           -Dsonar.verbose=true
           -Dsonar.sonar.go.coverage.reportPaths=./coverage/coverage.out
