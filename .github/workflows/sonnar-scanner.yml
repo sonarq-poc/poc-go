@@ -30,9 +30,7 @@ jobs:
       run: ls
 
     - name: Test
-      run: |
-        cd src
-        go test "./.." -json > test-report.out -coverprofile=coverage.out
+      run: go test -v .../src -json > test-report.out -coverprofile=coverage.out
   
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
