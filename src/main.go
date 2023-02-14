@@ -4,6 +4,7 @@ import "fmt"
 
 var x = 10
 
+
 func main() {
     fmt.Println("Go Proof of concept")
 	fmt.Println("Value of x:", x)
@@ -15,9 +16,6 @@ func main() {
 	fmt.Println("Value of x:", x)
 	fmt.Println("Value of x:", x)
 }
-
-	
-
 			
 
 func addition1() {
@@ -37,6 +35,22 @@ func addition2() {
 	var c int
 	c = a +b
 	fmt.Printf("Value of c is %d\n", c)
+}
+
+func addition3(a int, b int) int {
+	var c int
+	c = a + b
+
+	fmt.Printf("Value of c is %d\n", c)
+	return c;
+}
+
+func addInt(numbers ...int) int { 
+    sum := 0 
+    for _, num := range numbers { 
+        sum += num 
+    } 
+    return sum 
 }
 
 func foo2() {
