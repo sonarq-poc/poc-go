@@ -29,8 +29,13 @@ jobs:
     - name: List
       run: ls
 
+    # - name: Test
+    #   run: go test .../src -json > test-report.out -coverprofile=coverage.out
+    - name: access src
+      run: cd ./src
+
     - name: Test
-      run: go test -v .../src -json > test-report.out -coverprofile=coverage.out
+      run: go test -v -outputdir coverage -json > coverage/test-report.out -coverprofile=coverage.out
 
     - name: List
       run: ls
