@@ -25,8 +25,8 @@ jobs:
 
     - name: Test
       run:  |
-      cd src
-      go test -v -json > test-report.out -coverprofile=coverage.out
+        cd src
+        go test -v -json > test-report.out -coverprofile=coverage.out
   
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
