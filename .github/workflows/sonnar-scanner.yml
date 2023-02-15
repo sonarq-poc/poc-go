@@ -48,7 +48,7 @@ jobs:
       run: |
         cd ./src
         ls
-        go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
+        go test -v -outputdir coverage -coverprofile=coverage.out -covermode=count -json > ./coverage/test-report.json
 
     # - name: Test
     #   run: go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
@@ -62,7 +62,7 @@ jobs:
         args: >
           -Dsonar.verbose=true
           -Dsonar.sonar.go.coverage.reportPaths=src/coverage/coverage.out
-          -Dsonar.sonar.go.tests.reportPaths=src/coverage/test-report.out
+          -Dsonar.sonar.go.tests.reportPaths=src/coverage/test-report.json
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
