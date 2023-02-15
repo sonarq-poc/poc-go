@@ -8,6 +8,8 @@ on:
 
 name: Main Workflow
 jobs:
+  - env:
+    root_path: /home/runner/work/poc-go/poc-go/src
   sonarqube:
     runs-on: ubuntu-latest
     steps:
@@ -34,12 +36,16 @@ jobs:
     # - name: Test
     #   run: go test .../src -json > test-report.out -coverprofile=coverage.out
 
-    - name: List
+    # - name: List
+    #   run: |
+    #     cd ./src
+    #     ls
+    #     go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
+
+    - name: Run tests
       run: |
-        cd ./src
         ls
-        # ./src/coverage if coverage at same level as src folder
-        go test -v -outputdir coverage -json > ../src/coverage/test-report.out -coverprofile=coverage.out
+        go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
 
     # - name: Test
     #   run: go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
