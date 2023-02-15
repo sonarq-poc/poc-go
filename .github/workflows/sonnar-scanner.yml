@@ -38,7 +38,8 @@ jobs:
       run: |
         cd ./src
         ls
-        go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
+        # ./src/coverage if coverage at same level as src folder
+        go test -v -outputdir coverage -json > ../src/coverage/test-report.out -coverprofile=coverage.out
 
     # - name: Test
     #   run: go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
