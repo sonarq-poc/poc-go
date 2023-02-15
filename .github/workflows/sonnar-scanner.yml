@@ -52,12 +52,16 @@ jobs:
 
     # - name: Test
     #   run: go test -v -outputdir coverage -json > ./coverage/test-report.out -coverprofile=coverage.out
+      # -Dsonar.sonar.go.coverage.reportPaths=src/coverage/coverage.out
+          # -Dsonar.sonar.go.tests.reportPaths=src/coverage/test-report.json
 
     - name: List
-      run: ls -la
-  
-          # -Dsonar.sonar.go.coverage.reportPaths=src/coverage/coverage.out
-          # -Dsonar.sonar.go.tests.reportPaths=src/coverage/test-report.json
+      run: |
+        ls -la
+        cd src
+        cd coverage
+        cat coverage.out
+        
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       with:
