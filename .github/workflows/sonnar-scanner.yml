@@ -8,15 +8,15 @@ on:
 
 name: Main Workflow
 jobs:
-  - env:
-    root_path: /home/runner/work/poc-go/poc-go/src
   sonarqube:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
+      - env:
+        root_path: /home/runner/work/poc-go/poc-go/src
+      - uses: actions/checkout@v3
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
