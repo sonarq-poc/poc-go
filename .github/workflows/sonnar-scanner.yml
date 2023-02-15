@@ -61,8 +61,8 @@ jobs:
       with:
         args: >
           -Dsonar.verbose=true
-          -Dsonar.sonar.go.coverage.reportPaths=${{vars.PATH}}/src/coverage/coverage.out
-          -Dsonar.sonar.go.tests.reportPaths=${{vars.PATH}}/src/coverage/test-report.out
+          -Dsonar.sonar.go.coverage.reportPaths=src/coverage/coverage.out
+          -Dsonar.sonar.go.tests.reportPaths=src/coverage/test-report.out
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
