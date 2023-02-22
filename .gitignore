@@ -1,0 +1,4 @@
+src/coverage/coverage.out
+src/coverage/test-report.json
+go.mod
+go.sum
