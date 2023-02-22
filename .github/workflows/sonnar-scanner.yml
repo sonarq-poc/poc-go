@@ -46,8 +46,8 @@ jobs:
 
     - name: Run tests
       run: |
-        export GOPATH=$PWD:$PWD
         cd ./src
+        export GOPATH=$PWD:$PWD
         ls
         env | grep GOPATH
         go test -v -outputdir coverage -coverprofile="coverage.out" -json > ./coverage/test-report.json
