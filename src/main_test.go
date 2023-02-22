@@ -15,8 +15,8 @@ func TestAddition3(t *testing.T) {
 
 func TestAddition4(t *testing.T) {
     sum := addition3(2,2);
-    if sum == 3 {
-        t.Log("Recieved as expected: 3")
+    if sum == 4 {
+        t.Log("Recieved as expected: 4")
     } else {
         t.Error(sum)
     }
