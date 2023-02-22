@@ -48,6 +48,8 @@ jobs:
       run: |
         cd ./src
         ls
+        export GOPATH=$PWD:$PWD/vendor
+        env | grep GOPATH
         go test -v -outputdir coverage -coverprofile="coverage.out" -json > ./coverage/test-report.json
 
     # - name: Test
@@ -61,6 +63,7 @@ jobs:
         cd src
         cd coverage
         cat coverage.out
+        cat test-report.json
         
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
