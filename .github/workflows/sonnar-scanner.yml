@@ -27,6 +27,7 @@ jobs:
         export GOPATH=$PWD:$PWD
         ls
         env | grep GOPATH
+        mkdir coverage
         go test -v -outputdir coverage -coverprofile="coverage.out" -json > ./coverage/test-report.json
       # Path configuration was added in SQ UI
       # -Dsonar.sonar.go.coverage.reportPaths=src/coverage/coverage.out
